@@ -1,14 +1,16 @@
-function returneazaNumerePanala20() {
+//returneaza numerele pana la 20
+function NumberFromOneTo20(number) {
   let numere = "";
-  for (let i = 1; i <= 20; i++) {
+  for (let i = 1; i <= number; i++) {
     numere = numere + i + ";";
   }
   console.log("Numerele de la 1 to 20: " + numere);
 }
 
-function returneazaNumereParePanaLa20() {
+//returneaza numerele impare pana la 20
+function returneazaNumereParePanaLa20(number) {
   let numere_impare = "";
-  for (let i = 1; i <= 20; i++) {
+  for (let i = 1; i <= number; i++) {
     if (i % 2 != 0) {
       numere_impare = i + ";";
       console.log("Numerele impare pana la 20: " + numere_impare);
@@ -16,51 +18,48 @@ function returneazaNumereParePanaLa20() {
   }
 }
 
-function suma() {
-let array_given = prompt('Adauga elementele unui array');
-array_given = Number(array_given);
+//Suma elementelor unui array
+function sumArray() {
+  var array = [1, 3, 5, 6, 9];
+  var sum = 0;
 
-  var my_array=[];
-  my_array.push(array_given);
-
-console.log(my_array);
-
-//   var sum = 0;
-//   for (let i = 0; i < nums.length; i++) {
-//     sum += nums[i];
-//   }
-//   console.log(sum);
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  console.log("Suma elementelor unui array: " + sum);
 }
 
-function sum_test(){
-    let max;
-let userNumber;
-let verify_number;
+function maxOfArray() {
+  var item = [1, 4, 6, 7, 4, 9, 45, 0, -1];
 
-do {
-  userNumber = prompt("add number");
-  
-    if((typeof userNumber) !=='object'){
-        verify_number = Number(userNumber);
-    }else {
-        verify_number = 'object';
+  max = Math.max(...item);
+  console.log("Max of array este: " + max);
+}
+
+// // Elementul max al elementelor unui array dat
+function sumElementsArrayGiven() {
+  let userNumber;
+  let verify_number;
+  let nr_max = [];
+
+  do {
+    userNumber = prompt("add number");
+
+    if (typeof userNumber !== "object") {
+      verify_number = Number(userNumber);
+      nr_max.push(verify_number);
+        } else {
+      verify_number = "object";
     }
 
-  if (typeof max === "undefined") {
-    max = verify_number;
-  }
+  } while (verify_number !== "object");
 
-  if (userNumber != null && max < verify_number) {
-    max = verify_number;
-  }
-
-} while (verify_number !=='object');
-
-console.log("numarul maxim este: " + max);
+console.log('Nr max din array-ul dat este: ' + Math.max(...nr_max));
 }
 
 
-let homework1 = returneazaNumerePanala20();
-let homework2 = returneazaNumereParePanaLa20();
-let sum_array = suma();
-let adunare = sum_test();
+let homework1 = NumberFromOneTo20(20);
+let homework2 = returneazaNumereParePanaLa20(20);
+let sum_elements_array = sumArray();
+let max_of_array = maxOfArray();
+let sum_elements_array_dat = sumElementsArrayGiven();
