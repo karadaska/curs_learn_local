@@ -1,4 +1,4 @@
-//returneaza numerele pana la 20
+//Prob 1: returneaza numerele pana la 20
 function NumberFromOneTo20(number) {
   let numere = "";
   for (let i = 1; i <= number; i++) {
@@ -7,16 +7,16 @@ function NumberFromOneTo20(number) {
   console.log("Numerele de la 1 to 20: " + numere);
 }
 
-//returneaza numerele impare pana la 20
-function returneazaNumereParePanaLa20(number) {
-  let numere_impare = "";
-  for (let i = 1; i <= number; i++) {
-    if (i % 2 != 0) {
-      numere_impare = i + ";";
-      console.log("Numerele impare pana la 20: " + numere_impare);
+//Prob 2: returneaza numerele impare pana la 20
+function returneazaNrImpare(number) {
+    let numere_impare = [];
+    for (let i = 1; i <= number; i++) {
+      if (i % 2 != 0) {
+        numere_impare.push(i);
+      }
     }
+    console.log('Numelere imparte pana la 20 sunt:' +numere_impare);
   }
-}
 
 //Suma elementelor unui array
 function sumArray() {
@@ -57,9 +57,24 @@ function sumElementsArrayGiven() {
 console.log('Nr max din array-ul dat este: ' + Math.max(...nr_max));
 }
 
+function reverse(){
+    var item = [0, 1, 0, 1];
+    var item2= [1, 0, 1, 0];
+   
+    for (let i = 0; i < 4; i++) {
+        if(i % 2 == 0){
+            console.log(item);
+        }else {
+            console.log(item2);
+        }
+      }
+   
+}
 
 let homework1 = NumberFromOneTo20(20);
-let homework2 = returneazaNumereParePanaLa20(20);
+let impar = returneazaNrImpare(20);
 let sum_elements_array = sumArray();
 let max_of_array = maxOfArray();
 let sum_elements_array_dat = sumElementsArrayGiven();
+let repeat = reverse();
+
