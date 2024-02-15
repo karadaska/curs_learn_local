@@ -19,7 +19,6 @@ function returnNrImpare(number) {
   console.log("Ex2: Afiseaza numelere imparte pana la 20 sunt:" + numere_impare);
 }
 
-
 function sumElementsArrayGiven() {
   let userNumber;
   let verify_number;
@@ -44,8 +43,6 @@ function sumElementsArrayGiven() {
   console.log("Ex3: Suma elementelor din array-ul dat este: " + sum);
 }
 
-
-
 // Prob 4: Elementul maxim a unui array
 function maxOfArray() {
   var item = [1, 4, 6, 7, 4, 9, 45, 0, -1];
@@ -53,7 +50,6 @@ function maxOfArray() {
   max = Math.max(...item);
   console.log("Ex4: Elementul max a unui array este: " + max);
 }
-
 
 // Prob 5: De cate ori se repeta un element
 function elemRepeat(number) {
@@ -69,7 +65,6 @@ function elemRepeat(number) {
 
 }
 
-
 // Prob 6: Challenge
 function reverse() {
   var item = [0, 1, 0, 1];
@@ -77,9 +72,9 @@ function reverse() {
 
   for (let i = 0; i < 4; i++) {
     if (i % 2 == 0) {
-      console.log(item);
+      console.log(item.join(' '));
     } else {
-      console.log(item2);
+      console.log(item2.join(' '));
     }
   }
 }
