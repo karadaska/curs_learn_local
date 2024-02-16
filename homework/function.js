@@ -1,79 +1,57 @@
-
 //Prob 1: returneaza numerele pana la 20
-function NumberFromOneTo20(number) {
+function numbersFromOneTo20() {
   let numere = "";
-  for (let i = 1; i <= number; i++) {
+  for (let i = 1; i <= 20; i++) {
     numere = numere + i + ";";
   }
-  console.log("Ex1: Afiseaza numerele de la 1 to 20: " + numere);
+  console.log("numbersFromOneTo20()=> Afiseaza numerele de la 1 to 20: " + numere);
 }
 
 //Prob 2: returneaza numerele impare pana la 20
-function returnNrImpare(number) {
+function numbersOddOneTo20() {
   let numere_impare = [];
-  for (let i = 1; i <= number; i++) {
+  for (let i = 1; i <= 20; i++) {
     if (i % 2 != 0) {
       numere_impare.push(i);
     }
   }
-  console.log("Ex2: Afiseaza numelere imparte pana la 20 sunt:" + numere_impare);
+  console.log("numbersOddOneTo20()=> Afiseaza numelere imparte pana la 20: " + numere_impare);
 }
 
-
-// TO DO refacut
+// Prob 3: Suma elementelor unui array dat
 function sumElementsArrayGiven() {
-  let userNumber;
-  let verify_number;
-  let nr_max = [];
+  let item = [1, 2, 4, 5, 6, 0, -1];
   let sum = 0;
-
-  do {
-    userNumber = prompt("Add elements of array");
-
-    if (typeof userNumber !== "object") {
-      verify_number = Number(userNumber);
-      nr_max.push(verify_number);
-    } else {
-      verify_number = "object";
-    }
-
-  } while (verify_number !== "object");
-
-  for (let i = 0; i < nr_max.length; i++) {
-    sum +=nr_max[i];
-  }
-  console.log("Ex3: Suma elementelor din array-ul dat este: " + sum);
-}
-
-
-// REFACUT TO DO
-// Prob 4: Elementul maxim a unui array
-function maxOfArray() {
-  var item = [1, 4, 6, 7, 4, 9, 45, 0, -1];
-
-  max = Math.max(...item);
-  console.log("Ex4: Elementul max a unui array este: " + max);
-}
-
-
-// refacut TO DO
-// Prob 5: De cate ori se repeta un element
-function elemRepeat([1,2,3,4, 4], 4) {
-  var item = [1, 3, 4, 5, 6, 7, 5];
-  var nr = 0;
-
   for (let i = 0; i < item.length; i++) {
-    if (number == item[i]) {
-        nr++;
-    }
+    sum += item[i];
   }
-  console.log(`Ex5: Numarul ${number} se repeta de: ${nr}`);
-  // se repeta de 2 ori
-
+  console.log("sumElementsArrayGiven()=> Suma elementelor a array-ului: " + '[' +item  + ']' + ' este: ' + sum);
 }
 
+//Prob 4: Afiseaza elementul maxim din array
+function maxOfArray() {
+  let item = [1, 4, 64, 7, 4, 9, 45, 0, -1];
+  let max = 0;
+  for (let i = 0; i < item.length; i++) {
+    if (max < item[i]) {
+      max = item[i];
+    }
+  }
+  console.log(`maxOfArray()=> Elementul max din array-ul [${item}] este: ${max}`);
+}
 
-// Refacut TO DO
+// Prob 5: De cate ori se repeta un element in array-ul dat ca parametru
+function elemRepeatFromArray(items_array, number) {
+  let nr = 0;
+
+  for (let i = 0; i < items_array.length; i++) {
+    if (number == items_array[i]) {
+      nr++;
+    }
+  }
+  console.log(`elemRepeatFromArray()=> Numarul ${number} se repeta de: ${nr} ori`);
+}
+
 // Prob 6: Challenge
 function reverse() {
   var item = [0, 1, 0, 1];
@@ -81,18 +59,16 @@ function reverse() {
 
   for (let i = 0; i < 4; i++) {
     if (i % 2 == 0) {
-      console.log(item.join(' '));
+      console.log(item.join(" "));
     } else {
-      console.log(item2.join(' '));
+      console.log(item2.join(" "));
     }
   }
 }
 
-let homework1 = NumberFromOneTo20(20);
-let impar = returnNrImpare(20);
-let max_of_array = maxOfArray();
+let numbers_to_20 = numbersFromOneTo20();
+let numbers_odd_to_20 = numbersOddOneTo20();
 let sum_elements_array_dat = sumElementsArrayGiven();
-let repeat_number = elemRepeat(5);
-let repeat = reverse();
-
-
+let max_of_array = maxOfArray();
+let repeat_number = elemRepeatFromArray([2, 3, 6, 3, 8,], 3);
+// let repeat = reverse();
