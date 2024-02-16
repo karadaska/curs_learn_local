@@ -1,0 +1,18 @@
+.container{
+    border:2px solid orange;
+  }
+  #d1,#d2,#d3{
+    border:1px solid gray;
+    text-align: center;
+    margin:25px;
+  }
+  #d1{
+    border:2px solid blue;
+  }
+  #d2{
+    border:2px solid green;
+  }
+  #d3{
+    height: 50px;
+    border:2px solid red;
+  }
