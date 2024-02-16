@@ -53,7 +53,8 @@ function elemRepeatFromArray(items_array, number) {
 }
 
 // Prob 6: Challenge
-function reverse() {
+function patternNumbers() {
+console.log('Challange=> patternNumbers()');
   var item = [0, 1, 0, 1];
   var item2 = [1, 0, 1, 0];
 
@@ -71,4 +72,5 @@ let numbers_odd_to_20 = numbersOddOneTo20();
 let sum_elements_array_dat = sumElementsArrayGiven();
 let max_of_array = maxOfArray();
 let repeat_number = elemRepeatFromArray([2, 3, 6, 3, 8,], 3);
-// let repeat = reverse();
+let challenge = patternNumbers();
+
