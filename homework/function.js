@@ -52,16 +52,18 @@ function elemRepeatFromArray(items_array, number) {
   console.log(`elemRepeatFromArray()=> Numarul ${number} se repeta de: ${nr} ori`);
 }
 
+
 // Prob 6: Challenge
 function patternNumbers1() {
-  let item1 = [];
-  let item2 = [];
-for (let i = 0; i < 4; i++) {
-  console.log(i%2);
+    for (let i = 0; i < 4; i++) {
+        console.log(i%2);
+        for (let i = 4; i > 4; i--) {
+        console.log(i%2);
+        }
+    }
 }
-  }
 
-function patternNumbers() {
+function patternNumbers2() {
 console.log('Challange=> patternNumbers()');
   var item = [0, 1, 0, 1];
   var item2 = [1, 0, 1, 0];
@@ -75,11 +77,13 @@ console.log('Challange=> patternNumbers()');
   }
 }
 
+
+
 let numbers_to_20 = numbersFromOneTo20();
 let numbers_odd_to_20 = numbersOddOneTo20();
 let sum_elements_array_dat = sumElementsArrayGiven();
 let max_of_array = maxOfArray();
 let repeat_number = elemRepeatFromArray([2, 3, 6, 3, 8,], 3);
 let challenge = patternNumbers1();
-// let challenge = patternNumbers();
+// let challenge2 = patternNumbers2();
 
