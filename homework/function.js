@@ -69,7 +69,9 @@ function elemRepeatFromArray(items_array, number) {
 }
 
 // Prob 6: Challenge
-function patternNumbers1() {
+console.log('Challenge=> Challenge()');
+function Challenge() {
+console.log('Ex 6: Challenge()');
   let item = [];
   for (let i = 0; i < 4; i++) {
     item.push(i % 2);
@@ -82,24 +84,9 @@ function patternNumbers1() {
   }
 }
 
-function patternNumbers2() {
-  console.log("Challange=> patternNumbers()");
-  var item = [0, 1, 0, 1];
-  var item2 = [1, 0, 1, 0];
-
-  for (let i = 0; i < 4; i++) {
-    if (i % 2 == 0) {
-      console.log(item.join(" "));
-    } else {
-      console.log(item2.join(" "));
-    }
-  }
-}
-
 let numbers_to_20 = numbersFromOneTo20();
 let numbers_odd_to_20 = numbersOddOneTo20();
 let sum_elements_array_dat = sumElementsArrayGiven();
 let max_of_array = maxOfArray();
 let repeat_number = elemRepeatFromArray([2, 3, 6, 3, 8], 3);
-let challenge = patternNumbers1();
-let challenge2 = patternNumbers2();
+let prob_6 = Challenge();
