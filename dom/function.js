@@ -8,7 +8,7 @@ textContent.textContent = 'Am schimbat textul cu function textContent';
 // Schimbare continutului unui element html cu innerText:
 innerText.innerText = 'Am schimbat textul cu function innerText';
 
-// Schimbare continutului unui text ce contine o bugata din html cu functia innerHtml:
+// Schimbare continutului unui text ce contine o bucata din html cu functia innerHtml:
 change_html.innerHTML = '<span style="color:Red;">Am schimbat o bugata ce title cu innerHtml</span>';
 
 // // document.querySelector face selectia la un singur element html
@@ -30,7 +30,5 @@ array1.forEach(item => console.log(item));
 
 // Functia foreach convertita
 Array.from(items).forEach(item=>console.log(item));
-
-
 
 
