@@ -43,8 +43,6 @@ advCities.sort(function(a, b){
 });
 console.log(advCities);
 
-
-
 let arr = [
   {
     name: "Maricica",
