@@ -80,4 +80,3 @@ function verificare2() {
   varinta2.textContent = 'Rezultatul este incorect';
   
 };
-
