@@ -56,41 +56,28 @@ function calculeaza() {
   console.log('==============');
 }
 
-let num1 = document.querySelector("#nr1");
-let no1 = Number(num1);
-no1.textContent =Math.floor(Math.random() * 100);
+let item1 = document.querySelector("#nr1");
+item1.textContent =Math.floor(Math.random() * 100);
+no1 = Number(item1.textContent);
 
+let item2 = document.querySelector("#nr2");
+item2.textContent =Math.floor(Math.random() * 100);
+no2 = Number(item2.textContent);
 
+let sum = no1 + no2;
 
-// let num2 = document.querySelector("#nr2");
-// num2.textContent =Math.floor(Math.random() * 100);
-// let no2 = Number(num2);
+const rezultat = document.querySelector("#rezultat");
+rezultat.textContent = sum;
 
-// console.log(num1);
+function verificare1() {
+  const varinta1 = document.querySelector("#verificare");
+  varinta1.textContent = 'Rezultatul este corect';
+  
+};
 
+function verificare2() {
+  const varinta2 = document.querySelector("#verificare");
+  varinta2.textContent = 'Rezultatul este incorect';
+  
+};
 
-
-// let num2 = document.querySelector("#nr2");
-// num2.textContent = Number(Math.floor(Math.random() * 50));
-
-// let suma = num1+ num2;
-// console.log(suma);
-
-// const rezultat = document.querySelector("#rezultat");
-// rezultat.textContent = suma;
-
-// function verificare1() {
-//   const varinta1 = document.querySelector("#verificare");
-
-//   if (suma == 22) {
-//     varinta1.textContent = "Suma este corecta";
-//   }
-// }
-
-// function verificare2() {
-//   const varinta1 = document.querySelector("#verificare");
-
-//   if (suma != 22) {
-//     varinta1.textContent = "Suma nu este corecta";
-//   }
-// }
