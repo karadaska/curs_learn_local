@@ -4,7 +4,7 @@ function Suma() {
   let number2 = document.querySelector("#number2");
   let nr2 = Number(number2.value);
   let sum = nr1 + nr2;
-  console.log("Suma este: " + sum);
+  console.log("Rezultatul sumei este: " + sum);
 }
 
 function Diferenta() {
@@ -53,13 +53,12 @@ function calculeaza() {
   Diferenta(nr1, nr2);
   Inmultire(nr1, nr2);
   Impartire(nr1, nr2);
+  console.log('==============');
 }
 
 let num1 = document.querySelector("#nr1");
-// let no1 = Number(num1);
-// no1.textContent =Math.floor(Math.random() * 100);
-
-num1.textContent = '334';
+let no1 = Number(num1);
+no1.textContent =Math.floor(Math.random() * 100);
 
 
 
