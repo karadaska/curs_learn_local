@@ -1,8 +1,10 @@
 function Suma() {
   let number1 = document.querySelector("#number1");
   let nr1 = Number(number1.value);
+
   let number2 = document.querySelector("#number2");
   let nr2 = Number(number2.value);
+
   let sum = nr1 + nr2;
   console.log("Rezultatul sumei este: " + sum);
 }
@@ -10,6 +12,7 @@ function Suma() {
 function Diferenta() {
   let number1 = document.querySelector("#number1");
   let nr1 = Number(number1.value);
+
   let number2 = document.querySelector("#number2");
   let nr2 = Number(number2.value);
 
@@ -20,6 +23,7 @@ function Diferenta() {
 function Inmultire() {
   let number1 = document.querySelector("#number1");
   let nr1 = Number(number1.value);
+
   let number2 = document.querySelector("#number2");
   let nr2 = Number(number2.value);
 
@@ -30,8 +34,10 @@ function Inmultire() {
 function Impartire() {
   let number1 = document.querySelector("#number1");
   let nr1 = Number(number1.value);
+
   let number2 = document.querySelector("#number2");
   let nr2 = Number(number2.value);
+
   let impartire = 0;
 
   if (nr2 != 0) {
@@ -46,6 +52,7 @@ function Impartire() {
 function calculeaza() {
   let number1 = document.querySelector("#number1");
   let nr1 = Number(number1.value);
+  
   let number2 = document.querySelector("#number2");
   let nr2 = Number(number2.value);
 
