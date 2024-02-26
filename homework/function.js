@@ -52,7 +52,7 @@ function Impartire() {
 function calculeaza() {
   let number1 = document.querySelector("#number1");
   let nr1 = Number(number1.value);
-  
+
   let number2 = document.querySelector("#number2");
   let nr2 = Number(number2.value);
 
@@ -87,3 +87,4 @@ function verificare2() {
   varinta2.textContent = 'Rezultatul este incorect';
   
 };
+
