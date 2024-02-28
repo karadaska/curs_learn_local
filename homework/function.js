@@ -1,90 +1,71 @@
-function Suma() {
-  let number1 = document.querySelector("#number1");
-  let nr1 = Number(number1.value);
+let choice = ["piatra", "ziar", "foarfece"];
 
-  let number2 = document.querySelector("#number2");
-  let nr2 = Number(number2.value);
 
-  let sum = nr1 + nr2;
-  console.log("Rezultatul sumei este: " + sum);
+/ Choices //
+console.log(computerScore, playerScore)
+
+
+// Randomly Generate a computer choice //
+function getComputerChoice(choice){
+
+    return choice[Math.floor(Math.random() * choice.length)];
+
+}
+// Score Variable(s)
+var computerScore = 0;
+var playerScore = 0;
+// Playing the round ; determining winners //
+
+function round (playerSelection,computerSelection){
+    console.log(playerSelection, computerSelection);
+
+
+
+if (playerSelection === computerSelection){
+return `It's a tie! You both picked ${playerSelection}!` ;
+}
+else if (playerSelection === "rock" && computerSelection=== "scissors"){
+   playerScore++;
+    return `You win! ${playerSelection} beats ${computerSelection}`;
+}
+else if (playerSelection === "paper" && computerSelection=== "rock"){
+    playerScore ++;
+    return `You win! ${playerSelection} beats ${computerSelection}`;
 }
 
-function Diferenta() {
-  let number1 = document.querySelector("#number1");
-  let nr1 = Number(number1.value);
-
-  let number2 = document.querySelector("#number2");
-  let nr2 = Number(number2.value);
-
-  let dif = nr1 - nr2;
-  console.log("Rezultatul diferentei este: " + dif);
+else if (playerSelection === "scissors" && computerSelection=== "paper"){
+   playerScore ++;
+    return `You win! ${playerSelection} beats ${computerSelection}`;
 }
 
-function Inmultire() {
-  let number1 = document.querySelector("#number1");
-  let nr1 = Number(number1.value);
-
-  let number2 = document.querySelector("#number2");
-  let nr2 = Number(number2.value);
-
-  let inmultire = nr1 * nr2;
-  console.log("Rezultatul inmultiri este: " + inmultire);
+else {
+    computerScore += 1;
+    return `You Lose! ${computerSelection} beats ${playerSelection}`;
 }
 
-function Impartire() {
-  let number1 = document.querySelector("#number1");
-  let nr1 = Number(number1.value);
-
-  let number2 = document.querySelector("#number2");
-  let nr2 = Number(number2.value);
-
-  let impartire = 0;
-
-  if (nr2 != 0) {
-    impartire = nr1 / nr2;
-  } else {
-    impartire = 0;
-  }
-
-  console.log("Rezultatul Impartirii este: " + impartire);
 }
 
-function calculeaza() {
-  let number1 = document.querySelector("#number1");
-  let nr1 = Number(number1.value);
 
-  let number2 = document.querySelector("#number2");
-  let nr2 = Number(number2.value);
 
-  Suma(nr1, nr2);
-  Diferenta(nr1, nr2);
-  Inmultire(nr1, nr2);
-  Impartire(nr1, nr2);
-  console.log('==============');
+const playerSelection = prompt("Rock, Paper, Or Scissors?").toLowerCase();
+const computerSelection = getComputerChoice(choice);
+
+/// shows comparison of what was passed ///
+console.log(round(playerSelection,computerSelection));
+
+while (computerScore<4 && playerScore<4){
+for (let i = 0; i < 10; i++) {
+    const playerSelection = prompt("Rock, Paper, Or Scissors?");
+    const computerSelection = getComputerChoice(choice);
+    //call round function
+    console.log(round(playerSelection, computerSelection));
+    console.log(playerScore, computerScore)
+
+
 }
+}
+round()
 
-let item1 = document.querySelector("#nr1");
-item1.textContent =Math.floor(Math.random() * 100);
-no1 = Number(item1.textContent);
+console.log(computerScore, playerScore)
 
-let item2 = document.querySelector("#nr2");
-item2.textContent =Math.floor(Math.random() * 100);
-no2 = Number(item2.textContent);
-
-let sum = no1 + no2;
-
-const rezultat = document.querySelector("#rezultat");
-rezultat.textContent = sum;
-
-function verificare1() {
-  const varinta1 = document.querySelector("#verificare");
-  varinta1.textContent = 'Rezultatul este corect';
-  
-};
-
-function verificare2() {
-  const varinta2 = document.querySelector("#verificare");
-  varinta2.textContent = 'Rezultatul este incorect';
-  
-};
-
+console.log("Hello World")
