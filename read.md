@@ -15,6 +15,9 @@
 * Puteam scoate toate elementele html care contin clasa =”clasa_demo”: document.getElementsByClassName(‘class_demo’)	
 * Puteam scoate toate butoanele din html: document.getElementsByTagName(‘button’);	
 * inlocuirea unui element se face cu replateWith() sau cu replaceChild()
+* cod asincron sunt bucati de cod care se executa la bucati de timp
+* setinterval se executa codul dupa un anumit timp
+* daca vreau sa fac un eveniment pe un buton => buton.addEventListener ('click', onclick) [btn2.addEventListener ('click', (e) => console.log('am dat click pe buton'));]
 
 	<p id="demo">Un paragraf</p>
 <button type="button" onclick="myFunction()">Try it</button>

@@ -23,6 +23,9 @@ btn2.addEventListener ('click', function(e){
 alert('am mai pus un event pe addEventListener')
 });
 
+btn2.addEventListener ('click', (e) => console.log('am dat click pe buton'));
+    
+
 // inregistram functia ca handle
 
 // Ca sa stergem un handler pentru un eveniment putem seta null pe onclick sau folosim functia removeEventListener
