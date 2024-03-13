@@ -1,6 +1,8 @@
 let numere = [1,2,3, 'test', false];
 let numar2 = [1,2,3,4,5,6,7];
 
+
+// Daca vreau sa scot elementele dintr-un array fac console.log(...numere);
 // Adaugam elemente la sfarsitul unui array: functia push
 numere.push('end_array');
 console.log('Adaugam elemente la sfarsitul unui array cu functia push: ' + numere);
@@ -28,9 +30,6 @@ console.log(txt);
 
 // numere.splice trebuie vazut
 
-
-// numere.slice trebuie vazut
-// To DO
 
 // for in javascript
 for(let i=0 ; i < numere.length; i++){

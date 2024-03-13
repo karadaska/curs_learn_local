@@ -1,3 +1,5 @@
+* document.getElementById("demo").innerHTML scrie intr-un html continutul dorit
+* document.getElementById("demo").write scrie in iesirea HTML
 * Math.random afiseaza valori intre 0 si 1
 * Valoare absoluta math.abs returneaza valoare pozitiva (-7) returneaza 7
 * Daca vrem sa inlocuim un element dintr-o lista se face cu replaceWith
@@ -51,3 +53,4 @@
 * removeChild se aplica pe parintele copilului care vrei sa stergi si trimtie o referinta a elementului
 let sters = parinte.removeChild(parinte.children[[4]]);
 console.log(sters);
+
