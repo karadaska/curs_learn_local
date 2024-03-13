@@ -1,3 +1,7 @@
+// Verificare daca este numar se face cu Nan
+const verificare_numar = 12;
+
+console.log('este numar');
 // Asa arata un obiect
 const person = {
     firstName:"John", 
