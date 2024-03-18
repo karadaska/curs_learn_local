@@ -67,6 +67,7 @@ console.log('Adaugam elemente la inceputul unui array cu functia unshift : ' + n
 // Verificare daca este numar se face cu Nan
 // Daca vreau sa scot elementele dintr-un array fac console.log(...numere);
 
+Object.keys
 {
     let x = 2;
   }
@@ -144,7 +145,7 @@ console.log('Pentru a putea folosi ghilimele intr-un sir exemplu: "ghilimele \"i
 
 
 // Adaugam elemente la sfarsitul unui array: functia push
-numere.push('end_array');
+numere2.push('end_array');
 console.log('Adaugam elemente la sfarsitul unui array cu functia push: ' + numere);
 
 
