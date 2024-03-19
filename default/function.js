@@ -54,6 +54,14 @@ const four = (isNaN(one2));
 console.log('Este diferit de numar: ' + two);
 console.log('Este diferit de numar? ' + four);
 
+
+// -----------------NUMBER MOETHOD--------------------
+// functia toString returneaza un numar ca fiind un sir
+let number_toString = 12;
+console.log(number_toString.toString);
+
+
+
 // <span>*Cu functia innerHtml scrii trimiti date intr-un fisier html</span><br/>
 // <span>*{ let x = 2} inafara blocului x nu poate fi folosit</span><br/>
 // <span>*{ var x = 2} inafara blocului x poate fi folosit</span><br/>
