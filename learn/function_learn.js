@@ -1,30 +1,39 @@
+// let c = 10; c &&= 3;
+// aici valoare c o sa fie 3
 
-// Array
-const myArray= [1,2,3,4, 'gicu'];
-myArray.forEach(element => {
-    console.log(element)
-});
-
-// Array de obiecte
-const cars = ["Saab", "Volvo", "BMW"];
-const nume = 'Marius';
-const prenume = "Salavastru";
-const nume_complet = `Marius Salavastru`;
+// daca prima valoare este falsa atunci ia valoarea a 2-a
+// let x = undefined;
+// x ||= 5;
 
 
-// Putem scoate elementele dintr-un array cu functia shift si pop
-console.log('Scoatem primul element din array cu shift: ' +numar2.shift());
-console.log('Scoatem primul element din array cu pop: ' + numar2.pop());
+// // Array
+// const myArray= [1,2,3,4, 'gicu'];
+// myArray.forEach(element => {
+//     console.log(element)
+// });
 
-let position = [1,2,3,4,5,6,7];
-// Pentru a afla pozitia unui element din array se face cu indexof()
-let posision_array = position.indexOf(1);
-console.log('Pozitia unui element dintr-un array este data de functia indexof(): ' + posision_array)
+// // Array de obiecte
+// const cars = ["Saab", "Volvo", "BMW"];
+// const nume = 'Marius';
+// const prenume = "Salavastru";
+// const nume_complet = `Marius Salavastru`;
 
 
-// Adaugam elemente la inceputul unui array cu functia unshift
-numere.unshift('first_array');
-console.log('Adaugam elemente la inceputul unui array cu functia unshift : ' + numere);
+// // Putem scoate elementele dintr-un array cu functia shift si pop
+// console.log('Scoatem primul element din array cu shift: ' +numar2.shift());
+// console.log('Scoatem primul element din array cu pop: ' + numar2.pop());
+
+// let position = [1,2,3,4,5,6,7];
+// // Pentru a afla pozitia unui element din array se face cu indexof()
+// let posision_array = position.indexOf(1);
+// console.log('Pozitia unui element dintr-un array este data de functia indexof(): ' + posision_array)
+
+
+
+
+// // Adaugam elemente la inceputul unui array cu functia unshift
+// numere.unshift('first_array');
+// console.log('Adaugam elemente la inceputul unui array cu functia unshift : ' + numere);
 
 // Ca sa trimitem cod html din javascript trebuie sa folosim functia  .innerHtml
 // Ca sa nu folosim console log si sa afisam in browser textul folosim document.write
