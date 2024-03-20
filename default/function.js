@@ -1,9 +1,14 @@
+// -----------------ARRAYS--------------------
+
+
+
+
 // -----------------OPERATORI LOGICI--------------------
 let c = 10; c &&= 3;
 // aici valoare c o sa fie 3: if c == && (true) atunci c =3
 
-// daca prima valoare este falsa atunci ia valoarea a 2-a
 let x = undefined; x ||= 5;
+// daca prima valoare este falsa atunci ia valoarea a 2-a
 
 
 // -----------------SIRURI DE SABLOANE--------------------
@@ -59,18 +64,14 @@ console.log('Este diferit de numar? ' + four);
 // functia toString returneaza un numar ca fiind un sir
 let number_toString = 12;
 console.log(number_toString.toString);
+// toFixed()returnează un șir, cu numărul scris cu un număr specificat de zecimale: 
+// valueOf()returnează un număr ca număr. 
 
-
-
-// <span>*Cu functia innerHtml scrii trimiti date intr-un fisier html</span><br/>
-// <span>*{ let x = 2} inafara blocului x nu poate fi folosit</span><br/>
-// <span>*{ var x = 2} inafara blocului x poate fi folosit</span><br/>
-// <span>* let x=10 (variabila globala si x este 10) { let x = 2 variabile x este 2 in bloc} inafara blocului x este 10</span><br/>
-// <span>*Const x defineste o valea constanta a lui x</span><br/>
-// <span>*const car = {type:"Fiat", model:"500", color:"white"}; am facut un obiect</span><br/>
-// <span>*dar nu putem mai departe sa-i atribuim noi valori car = {type:"Skoda", model:"100", color:"white"}; O sa dea eroare</span><br/>
-// <span>*let și const trebuie declarat înainte de utilizare si nu se leaga de this</span><br/>
-
-
+// Există 3 metode JavaScript care pot fi utilizate pentru a converti o variabilă într-un număr: 
+// The Number()metoda poate fi folosită pentru a converti variabilele JavaScript în numere: 
+// parseInt() 	Analizează argumentul său și returnează un număr întreg 
+// pressFloat() 	Analizează argumentul său și returnează un număr în virgulă mobilă 
+// parseFloat()parsează un șir și returnează un număr. Spațiile sunt permis. Se returnează doar primul număr:
+// parseInt()parsează un șir și returnează un număr întreg. Spațiile sunt permis. Se returnează doar primul număr: 
 
 
