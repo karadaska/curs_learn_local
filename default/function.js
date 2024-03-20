@@ -1,4 +1,14 @@
 // -----------------ARRAYS--------------------
+let xxx = ['cucu', 3, 'mama', 'tata'];
+console.log(`Array afisat cu ... ` + [...xxx]);
+
+xxx.forEach(element => {
+    console.log(element);
+});
+
+
+
+
 
 
 
