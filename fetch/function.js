@@ -6,6 +6,8 @@ const elem_display = document.querySelector('.display');
 async function categorii(){
     const lista = await fetch ("https://api.chucknorris.io/jokes/categories");
     const list = await lista.json();
+
+    // Dupa ce am datele pot face o variabila.value sa scot datele
     elem_display.textContent = list;
 }
 
