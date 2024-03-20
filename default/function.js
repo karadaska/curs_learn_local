@@ -60,6 +60,129 @@ var sortare_alfabetica = ["Banana", "Orange", "Apple", "Mango"];
 sortare_alfabetica.sort();
 console.log('Sortarea alfabetica se poate face si cu sort: ' + sortare_alfabetica);
 
+// The reverse()metoda inversează elementele dintr-o matrice: 
+
+sortare_alfabetica.reverse();
+console.log('Inversarea elementelor dintru-un array se poate face cu reverse: ' + sortare_alfabetica);
+
+// Diferența dintre toSorted()și sort() este că prima metodă creează o nouă matrice, păstrând matricea originală neschimbată, 
+// în timp ce ultima metodă sort() modifică matricea originală
+
+// Diferența dintre toReversed()și reverse()este prima metodă creează o nouă matrice, 
+// păstrând matricea originală neschimbată, în timp ce ultima metodă modifică matricea originală. 
+
+
+// Sortarea dintr-un array in ordine crescatoare
+var sortare_asc_numerica = [40, 100, 1, 5, 25, 10];
+sortare_asc_numerica.sort(function(a, b) {return a-b});
+
+console.log('Sortarea crescatoare se poate face si cu sort {a-b}: ' + sortare_asc_numerica);
+
+// sau o altfel de sortare
+
+// Sortarea crescatoare a-b a unui array
+let items_asc = [10, 4, 5, 77, 8, -2, 0];
+let items_desc = [10, 4, 5, 77, 8, -2, 0];
+items_asc.sort((a,b) => a - b);
+items_desc.sort((a,b) => b - a);
+console.log('Sortarea crescatoare se poate face si in alt mod=> items.sort((a,b) => a - b): ' + items_asc);
+console.log('Sortarea descrescatoare se poate face si in alt mod=> items.sort((a,b) => b - a): ' + items_desc);
+
+
+// Sortarea dintr-un array in ordine descrescatoare
+var sortare_desc_numerica = [40, 100, 1, 5, 25, 10];
+sortare_desc_numerica.sort(function(a, b) {return b-a});
+console.log('Sortarea descrescatoare numerica se poate face si cu sort {b-a}: ' + sortare_desc_numerica);
+
+
+const cities = ['Iasi', 'Cluj-Napoca', 'Bucuresti', 'Timisoara', 'Brasov'];
+
+// Scoatem orasele care incep cu litera b (filtrare asa se face)
+const literab = cities.filter(function(elem){
+ return elem[0] == 'B';
+});
+
+console.log('Scoatem orasele care incep cu litera b ' + literab);
+
+//Afisare numare mai mari decat o valoare din array
+let numere_date = [10, 4, 5, 77, 8, -2, 0];
+let result_array = numere_date.filter((numere_date) => numere_date > -2);
+console.log('Afisare numare mai mari decat -2 dintr-un array: ' + result_array);
+
+
+// -----------------Obiecte SORTARE------------------------------------------------------------------------------------------------
+console.log('Sortare orase obiect');
+
+const advCities = [
+    {
+      name: 'Iasi',
+      rating: 7
+    },
+    {
+      name : 'Cluj-Napoca',
+      rating: 8
+    },
+    {
+      name : 'Bucuresti',
+      rating: 18
+    },
+    {
+      name : 'Timisioara',
+      rating: 10
+    }
+  ];
+
+// aici are 2 parametri
+// daca a - b...face sa fie sortarea asc
+// daca b - a...face sa fie sortarea asc
+advCities.sort(function(a, b){
+    //  return b.rating - a.rating;
+    // sortare descrescatoare
+      return a.rating - b.rating;
+  });
+console.log(advCities);
+
+let oameni = [
+    {
+      name: "Maricica",
+      varsta: 70,
+      inaltime: 150,
+    },
+    {
+      name: "Danut",
+      varsta: 69,
+      inaltime: 172,
+    },
+    {
+      name: "Florin",
+      varsta: 39,
+      inaltime: 170,
+    },
+  ];
+  
+
+// sortarea de obiect pe varsta asc
+oameni.sort(function (a, b) {
+    return a.varsta - b.varsta;
+  });
+  
+
+// console.log('Sortarea unui obiect dupa varsta asc ' + oameni);
+
+//   // sortarea de obiect pe name 1 metoda desc
+  oameni.sort(function (a, b) {
+    return b.varsta - a.varsta;
+  });
+
+console.log(oameni);
+
+  // sortarea de obiect pe name: a 2 metoda metoda
+  
+  // arr.sort(function (a, b) {
+  //   return b.name.localeCompare(a.name);
+  // });
+  
+  
 
 
 console.log('-----------------OPERATORI LOGICI------------------------------------------------------------------------------------------------')
