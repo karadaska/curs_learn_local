@@ -1,3 +1,33 @@
+console.log('-----------------JSON------------------------------------------------------------------------------------------------')
+
+let text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}'; 
+
+
+let demo= '{ "parinte" : [{"Danut" : "Munteanu"}]}'
+
+
+const obj = JSON.parse(text); 
+
+console.log('afisam jsonul' + text);
+console.log(obj);
+
+
+
+
+console.log('-----------------ARRAW FUNCTION------------------------------------------------------------------------------------------------')
+const variantahello1 = function() {
+    return "Hello World!";
+  } 
+// sau
+
+const variantahello2 = () => {return "hellor word 2"};
+
+
+
+
 console.log('-----------------DATES------------------------------------------------------------------------------------------------')
 let data = new Date();
 console.log('data afisata: ' + data);
