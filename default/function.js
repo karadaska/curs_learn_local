@@ -1,25 +1,78 @@
-// -----------------ARRAYS--------------------
-let xxx = ['cucu', 3, 'mama', 'tata'];
-console.log(`Array afisat cu ... ` + [...xxx]);
 
-xxx.forEach(element => {
+console.log('-----------------ARRAYS------------------------------------------------------------------------------------------------')
+// -----------------ARRAYS------------------------------------------------------------------------------------------------
+
+let item_array = ['cucu', 3, 'mama', 'tata'];
+console.log(`Array afisat cu ... ` + [...item_array]);
+
+item_array.forEach(element => {
     console.log(element);
 });
 
+const duplicate_array = item_array;
+console.log(`Duplicate array afisat cu ` + duplicate_array);
+
+// Putem converti un array to string cu functia toString()
+
+const array_to_string = duplicate_array.toString();
+console.log(`Array to string cu functia toString ` + array_to_string);
+
+// Adaugam elemente la sfarsitul unui array: functia push
+item_array.push('end_array');
+console.log('Adaugam elemente la sfarsitul unui array cu functia push: ' + item_array);
+
+const points = new Array(40, 100, 1, 5, 25, 10);
+console.log('array facut cu new array ' + points);
+
+// diferenta dintre cele 2
+const p = [4];
+const p1 = new Array(4);
+
+console.log('aceste este facut p = [40] =>  ' + p);
+console.log('aceste este facut p1 = new Array(40)  => ' + p1);
+console.log('-----------------ARRAYS METHODS------------------------------------------------------------------------------------------------')
+
+
+// -----------------ARRAYS METHODS------------------------------------------------------------------------------------------------
+// Daca vrei sa elemini ultimul element dintr-un array
+const fruncte = ["Banana", "Orange", "Apple", "Mango"];
+fruncte.pop();
+
+// The shift()metoda elimină primul element din array și „schimbă” tot alte elemente la un indice mai mic. 
+const fruncte2 = ["Banana", "Orange", "Apple", "Mango"];
+fruncte2.shift();
+
+// The unshift()metoda adaugă un nou element într-o matrice (la început) și „anulează” elemente mai vechi: 
+const fruncte3 = ["Banana", "Orange", "Apple", "Mango"];
+fruncte3.unshift("Lemon");
+
+let arr = ['unu', 'doi', 'trei'];
+// Functia join adauga un separator intr-un array
+var txt = arr.join(';');
+console.log(txt);
+
+console.log('-----------------ARRAYS SORTARE------------------------------------------------------------------------------------------------')
+
+// -----------------ARRAYS SORTARE------------------------------------------------------------------------------------------------
+
+// The sort()metoda sortează o matrice în ordine alfabetică: 
+var sortare_alfabetica = ["Banana", "Orange", "Apple", "Mango"];
+sortare_alfabetica.sort();
+console.log('Sortarea alfabetica se poate face si cu sort: ' + sortare_alfabetica);
 
 
 
+console.log('-----------------OPERATORI LOGICI------------------------------------------------------------------------------------------------')
 
+// -----------------OPERATORI LOGICI----------------------------------------------------------------------------------------
 
-
-
-// -----------------OPERATORI LOGICI--------------------
 let c = 10; c &&= 3;
 // aici valoare c o sa fie 3: if c == && (true) atunci c =3
 
 let x = undefined; x ||= 5;
 // daca prima valoare este falsa atunci ia valoarea a 2-a
 
+console.log('-----------------SIRURI DE SABLOANE------------------------------------------------------------------------------------------------')
 
 // -----------------SIRURI DE SABLOANE--------------------
 // Caracterul de evadare backslash ( \) transformă caracterele speciale în caractere șir: 
@@ -27,6 +80,9 @@ let demo1 = document.getElementById('demo1');
 demo1.innerHTML = "Cum punem textul \"pisic\" intre ghilimele";
 // Ca sa apara ghilimele se pune\ inainte de "
 let text2 = 'It\'s alright.';
+
+
+console.log('-----------------METODE SIRURI------------------------------------------------------------------------------------------------')
 
 // -----------------METODE SIRURI--------------------
 // Lungimea unui sir se face cu functia x.length
@@ -57,7 +113,10 @@ console.log(newText);
 
 //Functia split => imparte un string dupa ce separator vreau eu
 
-// -----------------NUMERE--------------------
+
+console.log('-----------------NUMERE------------------------------------------------------------------------------------------------')
+
+// -----------------NUMERE--------------------------------------------------------------------------------------------------------------------
 
 // IsNaN este un cuvânt rezervat JavaScript care verifica daca este diferit de numar. 
 
@@ -70,7 +129,10 @@ console.log('Este diferit de numar: ' + two);
 console.log('Este diferit de numar? ' + four);
 
 
-// -----------------NUMBER MOETHOD--------------------
+console.log('-----------------NUMBER MOETHOD------------------------------------------------------------------------------------------------')
+
+// -----------------NUMBER MOETHOD--------------------------------------------------------------------------------------------------------------
+
 // functia toString returneaza un numar ca fiind un sir
 let number_toString = 12;
 console.log(number_toString.toString);

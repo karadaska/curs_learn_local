@@ -1,25 +1,4 @@
-// let și const nu se leagă de this. 
-// Js face distinctie intre majuscule si minuscule (lastName != lastname)
-// Ca sa nu folosim console log si sa afisam in browser textul folosim document.write
-// let c = 10; c &&= 3;
-// aici valoare c o sa fie 3
 
-// daca prima valoare a lui xeste falsa atunci ia valoarea a 2-a
-// let x = undefined;
-// x ||= 5;
-
-
-// // Array
-// const myArray= [1,2,3,4, 'gicu'];
-// myArray.forEach(element => {
-//     console.log(element)
-// });
-
-// // Array de obiecte
-// const cars = ["Saab", "Volvo", "BMW"];
-// const nume = 'Marius';
-// const prenume = "Salavastru";
-// const nume_complet = `Marius Salavastru`;
 
 
 // // Putem scoate elementele dintr-un array cu functia shift si pop
@@ -35,15 +14,7 @@
 // numere.unshift('first_array');
 // console.log('Adaugam elemente la inceputul unui array cu functia unshift : ' + numere);
 
-// Ca sa trimitem cod html din javascript trebuie sa folosim functia  .innerHtml
 
-
-// Daca folosim const nume (variabila nu se poate modifica)
-// Daca folosim le nume (variabila se poate modifica)
-// /Variabilele declarate în interiorul unui bloc { } nu pot fi accesate din afara blocului: 
-// toString() 	Returnează un număr ca șir 
-// Valoarea() 	Returnează un număr ca număr 
-// toFixed() 	Returnează un număr scris cu un număr de zecimale 
 // Number.parseFloat() 	Convertește un șir într-un număr 
 // Number.parseInt() 	Convertește un șir într-un număr întreg 
 // Number.isInteger() 	Returnează adevărat dacă argumentul este un număr întreg 
@@ -72,41 +43,7 @@
 // The sort()metoda sortează o matrice în ordine alfabetică: 
 // The reverse()metoda inversează elementele dintr-o matrice:
 // toSorted() păstrând matricea originală neschimbată, în timp ce ultima metodă modifică matricea originală. 
-// Verificare daca este numar se face cu Nan
-// Daca vreau sa scot elementele dintr-un array fac console.log(...numere);
 
-Object.keys
-{
-    let x = 2;
-  }
-  // x can NOT be used here 
-
-  {
-    var x = 2;
-  }
-  // x CAN be used here
-//   Variabilele let x nu poate fi dublat
-//   Variabilele var x poate fi dublat
-
-var x = 10;
-// Here x is 10
-
-{
-var x = 2;
-// Here x is 2
-}
-
-// Here x is 2  (aici x ia ultima valoare din pagina)
-
-let xn = 10;
-// Here x is 10
-
-{
-let xn = 2;
-// Here x is 2 (nu poate fi folosita extern)
-}
-
-// Here x is 10 (ia valoare de sus care e accesibila)
 
 // Ca sa facem style la un text se face asa:
 document.getElementById("demo").style.fontSize = "35px"; 
@@ -114,37 +51,7 @@ document.getElementById("demo").style.fontSize = "35px";
 document.getElementById("demo").style.display = "block"; 
 
 
-// Conversia unui Array într-un șir se face cu toString()
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("to_string").innerHTML = fruits.toString();
 
-
-
-//Functia splic => imparte un string dupa ce separator vreau eu
-var arr = text_replace.split(",");
-console.log('Functia splic => imparte un string dupa ce separator vreau eu: ' + arr);
-
-
-//Verificare daca un sir contine un alt sir se face cu include
-console.log('Verificare daca un sir contine un alt sir se face cu include: ' + prenume.includes('Sala'));
-
-//Indexof verifica daca un sir de caractere contine un alt sir
-console.log('Indexof verifica daca un sir de caractere contine un alt sir: ' + nume.indexOf("r") > -1);
-
-
-
-//Indexof verifica daca un sir de caractere contine un alt sir
-console.log('Indexof verifica daca un sir de caractere contine un alt sir: ' + nume.indexOf("r") > -1);
-
-
-
-//Verificare daca un sir contine un alt sir se face cu include
-console.log('Verificare daca un sir contine un alt sir se face cu include: ' + prenume.includes('Sala'));
-
-
-// Adaugam elemente la sfarsitul unui array: functia push
-numere2.push('end_array');
-console.log('Adaugam elemente la sfarsitul unui array cu functia push: ' + numere);
 
 
 //this se refera la elementul html care a primit evenimentul
