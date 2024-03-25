@@ -7,7 +7,15 @@ async function getListDogs() {
   // const lista_animale = await fetch ("https://dog.ceo/api/breeds/list/all");
   const lista_items = await fetch("https://api.chucknorris.io/jokes/categories");
   const list = await lista_items.json();
+  let dogsobj = json.parse(lista_items);
+  // document.getElementById('pic').src = dogsobj.message
 };
+
+
+// if(valoarea.status == 200){
+
+// }
+
 
 
 console.log(getListDogs)
