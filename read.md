@@ -1,4 +1,6 @@
 
+// json.parse(variabile) => interpreateaza variabila ca fiind json
+
 // // Putem scoate elementele dintr-un array cu functia shift si pop
 // console.log('Scoatem primul element din array cu shift: ' +numar2.shift());
 // console.log('Scoatem primul element din array cu pop: ' + numar2.pop());
