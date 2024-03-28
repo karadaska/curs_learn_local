@@ -20,14 +20,20 @@ getListaDogs();
 
 async function imagePictureDog() {
   const displayDiv = document.querySelector(`.display`);
-  const selectedOption = categoriesDropdown.querySelector("option:checked");
-  const dog = selectedOption.textContent;
+    const selectedOption = categoriesDropdown.querySelector('option:checked');
+    const dog = selectedOption.textContent;
 
-  const response = await fetch(`https://dog.ceo/api/breed/${dog}/images`);
-  const quote = await response.json();
-  const data = quote.message;
+    const response = await fetch(`https://dog.ceo/api/breed/${dog}/images`);
+    const quote = await response.json();
+    const data = quote.message;
 
-  for (p in data) {
-    displayDiv.textContent = data[p];
-  }
+    for (p in data) {
+      const para = document.createElement("p");
+      // displayDiv.textContent = data[p];
+      // displayDiv.createElement = `<p>dasdasd</p>`;
+
+    }
+
 }
+
+
