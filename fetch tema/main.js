@@ -24,10 +24,14 @@ async function imagePictureDog() {
   const dog = selectedOption.textContent;
 
   const response = await fetch(`https://dog.ceo/api/breed/${dog}/images`);
-  const quote = await response.json();
-  const data = quote.message;
+  const lista = await response.json();
+  const ret = lista.message;
 
-  for (p in data) {
-    displayDiv.innerHTML = `<img class="display_img" src="${data[p]}" alt="${p}">`;
+  for (p in ret) {  
+    if(selectedOption.value != 0) {
+      displayDiv.innerHTML = `<img class="display_img" src="${ret[p]}" alt="${p}">`;
+    }else {
+      displayDiv.innerHTML = `Va rugam selectati o categorie de catei!`;
+    }
   }
 }
