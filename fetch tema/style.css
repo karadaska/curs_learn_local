@@ -12,3 +12,8 @@ h1{
     padding: 2rem;
     text-align: center;
 }
+
+.display img{
+    width: 500px;
+    height: 500px;
+}
