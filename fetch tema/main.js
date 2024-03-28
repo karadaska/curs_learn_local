@@ -2,7 +2,7 @@ const select_dog = document.querySelector(`#select_dog`);
 const aplica = document.querySelector(`#aplica`);
 aplica.addEventListener(`click`, imagePictureDog);
 
-async function getListaDogs() {
+async function getListDogs() {
   const response = await fetch("https://dog.ceo/api/breeds/list/all");
   const lista = await response.json();
   const items = lista.message;
@@ -11,11 +11,10 @@ async function getListaDogs() {
     const option = document.createElement("option");
     option.textContent = p;
     select_dog.append(option);
-    getListSubDog(p);
   }
 }
 
-getListaDogs();
+getListDogs();
 
 async function imagePictureDog() {
   const displayDiv = document.querySelector(`.display`);
@@ -33,13 +32,14 @@ async function imagePictureDog() {
       displayDiv.innerHTML = `Va rugam selectati o categorie de catei!`;
     }
   }
+
+  getSubListDogs(selectedOption.value);
+
 }
 
-async function getListSubDog(parent_dog) {
+async function getSubListDogs(parent_dog) {
   const response = await fetch(`https://dog.ceo/api/breed/${parent_dog}/list`);
   const lista = await response.json();
   const ret = lista.message;
   console.log(ret);
 }
-
-
