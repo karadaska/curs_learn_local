@@ -1,5 +1,5 @@
-const categoriesDropdown = document.querySelector(`#select_dog`);
-const fetchBtn = document.querySelector(`#fetch-quote-btn`);
+const select_dog = document.querySelector(`#select_dog`);
+const fetchBtn = document.querySelector(`#aplica`);
 fetchBtn.addEventListener(`click`, imagePictureDog);
 
 async function getListaDogs() {
@@ -12,7 +12,7 @@ async function getListaDogs() {
   for (p in data) {
     const option = document.createElement("option");
     option.textContent = p;
-    categoriesDropdown.append(option);
+    select_dog.append(option);
   }
 }
 
@@ -20,7 +20,7 @@ getListaDogs();
 
 async function imagePictureDog() {
   const displayDiv = document.querySelector(`.display`);
-  const selectedOption = categoriesDropdown.querySelector("option:checked");
+  const selectedOption = select_dog.querySelector("option:checked");
   const dog = selectedOption.textContent;
 
   const response = await fetch(`https://dog.ceo/api/breed/${dog}/images`);
