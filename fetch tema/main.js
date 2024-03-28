@@ -1,15 +1,16 @@
 const select_dog = document.querySelector(`#select_dog`);
-const fetchBtn = document.querySelector(`#aplica`);
-fetchBtn.addEventListener(`click`, imagePictureDog);
+const aplica = document.querySelector(`#aplica`);
+aplica.addEventListener(`click`, imagePictureDog);
 
 async function getListaDogs() {
   const response = await fetch("https://dog.ceo/api/breeds/list/all");
   const lista = await response.json();
-  const data = lista.message;
+  const items = lista.message;
+  const dataKeys = Object.keys(items);
 
-  const dataKeys = Object.keys(data);
+console.log(items);
 
-  for (p in data) {
+  for (p in items) {
     const option = document.createElement("option");
     option.textContent = p;
     select_dog.append(option);
