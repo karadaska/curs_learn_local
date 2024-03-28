@@ -8,6 +8,8 @@ async function getListaDogs() {
   const items = lista.message;
   const dataKeys = Object.keys(items);
 
+console.log(items);
+
   for (p in items) {
     const option = document.createElement("option");
     option.textContent = p;
@@ -26,10 +28,10 @@ async function imagePictureDog() {
   const lista = await response.json();
   const ret = lista.message;
 
-  for (p in ret) {
-    if (selectedOption.value != 0) {
+  for (p in ret) {  
+    if(selectedOption.value != 0) {
       displayDiv.innerHTML = `<img class="display_img" src="${ret[p]}" alt="${p}">`;
-    } else {
+    }else {
       displayDiv.innerHTML = `Va rugam selectati o categorie de catei!`;
     }
   }

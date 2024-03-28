@@ -2,13 +2,18 @@ h1{
     text-align: center;
 }
 
-#fetch-options{
+#row{
     text-align: center;
 }
 
-.display-quote{
+.display{
     border: 1px solid grey;
     margin: 1rem;
     padding: 2rem;
     text-align: center;
+}
+
+.display img{
+    width: 500px;
+    height: 500px;
 }
