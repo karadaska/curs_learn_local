@@ -30,7 +30,7 @@ async function imagePictureDog() {
     for (p in data) {
       const para = document.createElement("p");
       // displayDiv.textContent = data[p];
-      // displayDiv.createElement = `<p>dasdasd</p>`;
+      displayDiv.innerHTML = `<img src="${data[p]}" alt="${p}" width="500" height="600">`;
 
     }
 
