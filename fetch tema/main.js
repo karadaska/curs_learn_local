@@ -1,4 +1,5 @@
 const select_dog = document.querySelector(`#select_dog`);
+const select_sub_dog = document.querySelector(`#select_sub_dog`);
 // const aplica = document.querySelector(`#aplica`);
 // aplica.addEventListener(`click`, imagePictureDog);
 
@@ -41,5 +42,11 @@ async function getSubListDogs(parent_dog) {
   const response = await fetch(`https://dog.ceo/api/breed/${parent_dog}/list`);
   const lista = await response.json();
   const ret = lista.message;
-  console.log(ret);
+  if(ret.length > 0){
+    ret.forEach(item => {
+      const option = document.createElement("option");
+      option.textContent = item;
+      select_sub_dog.append(option);
+    });
+  }
 }
