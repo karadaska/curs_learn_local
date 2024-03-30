@@ -1,6 +1,6 @@
 const select_dog = document.querySelector(`#select_dog`);
-const aplica = document.querySelector(`#aplica`);
-aplica.addEventListener(`click`, imagePictureDog);
+// const aplica = document.querySelector(`#aplica`);
+// aplica.addEventListener(`click`, imagePictureDog);
 
 async function getListDogs() {
   const response = await fetch("https://dog.ceo/api/breeds/list/all");
