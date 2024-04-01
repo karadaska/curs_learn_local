@@ -42,6 +42,8 @@ async function getSubListDogs(parent_dog) {
   const response = await fetch(`https://dog.ceo/api/breed/${parent_dog}/list`);
   const lista = await response.json();
   const ret = lista.message;
+
+  
   if(ret.length > 0){
     ret.forEach(item => {
       const option = document.createElement("option");
