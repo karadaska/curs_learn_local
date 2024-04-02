@@ -1,5 +1,6 @@
 const select_dog = document.querySelector(`#select_dog`);
 const select_sub_dog = document.querySelector(`#select_sub_dog`);
+select_sub_dog.style.display = "none";
 // const aplica = document.querySelector(`#aplica`);
 // aplica.addEventListener(`click`, imagePictureDog);
 
@@ -35,7 +36,6 @@ async function imagePictureDog() {
   }
 
   getSubListDogs(selectedOption.value);
-
 }
 
 async function getSubListDogs(parent_dog) {
@@ -43,12 +43,22 @@ async function getSubListDogs(parent_dog) {
   const lista = await response.json();
   const ret = lista.message;
 
-  
   if(ret.length > 0){
+    select_sub_dog.style.display = "";
     ret.forEach(item => {
       const option = document.createElement("option");
       option.textContent = item;
       select_sub_dog.append(option);
     });
+  }else{
+    select_sub_dog.style.display = "none";
+    reset()
   }
+
+}
+
+function reset(){
+  $("#reset").on("click", function () {
+    $('#select_sub_dog').prop('option',0);
+  });
 }
