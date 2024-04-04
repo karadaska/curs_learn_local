@@ -1,6 +1,9 @@
+//Select date from html
 const select_dog = document.querySelector(`#select_dog`);
 const select_sub_dog = document.querySelector(`#select_sub_dog`);
 const displayDiv = document.querySelector(`.display`);
+
+// display none div-ul
 select_sub_dog.style.display = "none";
 
 async function createListaDogs() {
@@ -9,15 +12,39 @@ async function createListaDogs() {
   const items = lista.message;
 
   for (p in items) {
-    const option = document.createElement("option");
-    option.textContent = p;
-    select_dog.append(option);
+    const option_dog = document.createElement("option");
+    option_dog.textContent = p;
+    select_dog.append(option_dog);
   }
 
   return items;
 }
 
+// function createListaDogs(){
+//   const lista = getListaDogs();
+
+//     for (p in lista) {
+//       console.log(p);
+//     const option_dog = document.createElement("option");
+//     option_dog.textContent = p;
+//     select_dog.append(option_dog);
+//   }
+// };
+
 createListaDogs();
+
+// function getListaDogs() {
+//   fetch('https://dog.ceo/api/breeds/list/all')
+//   .then((response) => { 
+//       response.json().then((item) => {
+//           console.log(item);
+//           return item.message;
+//       }).catch((err) => {
+//           console.log(err);
+//       })
+//   });
+// }
+
 
 async function imagePictureDog() {
   const selectedOption = select_dog.querySelector("option:checked");
@@ -46,35 +73,34 @@ async function imagePictureDog() {
     }
   }
 
-//   if (lista_poze_sub_dogs.length > 0 && lista_sub_dogs.length > 0) {
-//     for (p in lista_poze_sub_dogs) {
-//       if (selectedOption.value != 0) {
-//         displayDiv.innerHTML = `<img class="display_img" src="${lista_poze_sub_dogs[p]}" alt="${p}">`;
-//       }
-//     }
-//   }
+  // if (lista_poze_sub_dogs.length > 0 && lista_sub_dogs.length > 0) {
+  //   for (p in lista_poze_sub_dogs) {
+  //     if (selectedOption.value != 0) {
+  //       displayDiv.innerHTML = `<img class="display_img" src="${lista_poze_sub_dogs[p]}" alt="${p}">`;
+  //     }
+  //   }
+  // }
 }
 
 async function imagePictureSubDog() {
-  // const select_sub_option = select_sub_dog.querySelector("option:checked");
-  // const select_sub_dogs = select_sub_option.textContent;
-  // getSubListDogs(select_sub_dogs.value);
+  const select_sub_option = select_sub_dog.querySelector("option:checked");
+  const select_sub_dogs = select_sub_option.textContent;
+  getSubListDogs(select_sub_dogs.value);
 
-  // console.log(getSubListDogs);
+  console.log(getSubListDogs);
 
-// const response_image_subdogs = await fetch(`https://dog.ceo/api/breed/${a}/${b}/images`);
-// const poze_sub_dogs = await response_image_subdogs.json();
-// const lista_poze_sub_dogs = poze_sub_dogs.message;
+const response_image_subdogs = await fetch(`https://dog.ceo/api/breed/${a}/${b}/images`);
+const poze_sub_dogs = await response_image_subdogs.json();
+const lista_poze_sub_dogs = poze_sub_dogs.message;
 
-//   if (lista_sub_dogs.length > 0) {
-//     for (p in lista_poze_sub_dogs) {
-//       if (selectedOption.value != 0) {
-//         displayDiv.innerHTML = `<img class="display_img" src="${lista_poze_sub_dogs[p]}" alt="${p}">`;
-//       }
-//     }
-//   }
+  if (lista_sub_dogs.length > 0) {
+    for (p in lista_poze_sub_dogs) {
+      if (selectedOption.value != 0) {
+        displayDiv.innerHTML = `<img class="display_img" src="${lista_poze_sub_dogs[p]}" alt="${p}">`;
+      }
+    }
+  }
 }
-
 
 async function getSubListDogs(parent_dog) {
   const response = await fetch(`https://dog.ceo/api/breed/${parent_dog}/list`);
