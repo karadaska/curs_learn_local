@@ -3,6 +3,7 @@ const select_sub_dog = document.querySelector(`#select_sub_dog`);
 select_sub_dog.style.display = "none";
 // const aplica = document.querySelector(`#aplica`);
 // aplica.addEventListener(`click`, imagePictureDog);
+    // reset();
 
 async function getListDogs() {
   const response = await fetch("https://dog.ceo/api/breeds/list/all");
@@ -52,7 +53,6 @@ async function getSubListDogs(parent_dog) {
     });
   }else{
     select_sub_dog.style.display = "none";
-    reset()
   }
 
 }
