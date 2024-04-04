@@ -15,6 +15,7 @@ async function getListDogs() {
     option.textContent = p;
     select_dog.append(option);
   }
+
 }
 
 getListDogs();
@@ -22,43 +23,79 @@ getListDogs();
 async function imagePictureDog() {
   const displayDiv = document.querySelector(`.display`);
   const selectedOption = select_dog.querySelector("option:checked");
-  const dog = selectedOption.textContent;
+  const dog_value = selectedOption.textContent;
+  getSubListDogs(selectedOption.value);
 
-  const response = await fetch(`https://dog.ceo/api/breed/${dog}/images`);
-  const lista = await response.json();
-  const ret = lista.message;
+  const response_image_dogs = await fetch(`https://dog.ceo/api/breed/${dog_value}/images`);
+  const poze_dogs = await response_image_dogs.json();
+  const lista_poze_dogs = poze_dogs.message;
 
-  for (p in ret) {
-    if (selectedOption.value != 0) {
-      displayDiv.innerHTML = `<img class="display_img" src="${ret[p]}" alt="${p}">`;
-    } else {
-      displayDiv.innerHTML = `Va rugam selectati o categorie de catei!`;
-    }
+
+  // lista de caini
+  const response_sub_dogs = await fetch(`https://dog.ceo/api/breed/${dog_value}/list`);
+  const list_sub_dogs = await response_sub_dogs.json();
+  const lista_sub_dogs = list_sub_dogs.message;
+
+
+  if(selectedOption.value == 0){
+    displayDiv.innerHTML = `Va rugam selectati o categorie de catei!`;
   }
 
-  getSubListDogs(selectedOption.value);
-}
+  if(lista_poze_dogs.length > 0 && lista_sub_dogs.length == 0){
+    for (p in lista_poze_dogs) {
+      if (selectedOption.value != 0) {
+        displayDiv.innerHTML = `<img class="display_img" src="${lista_poze_dogs[p]}" alt="${p}">`;
+      } 
+    }
+  };
+  
+  if (list_dogs.length > 0 && lista_sub_dogs.length > 0) {
+    for (p in lista_sub_dogs) {
+      if (selectedOption.value != 0) {
+        displayDiv.innerHTML = `<img class="display_img" src="${lista_sub_dogs[p]}" alt="${p}">`;
+      } 
+    }
+  }
+};
 
 async function getSubListDogs(parent_dog) {
   const response = await fetch(`https://dog.ceo/api/breed/${parent_dog}/list`);
   const lista = await response.json();
   const ret = lista.message;
+  const array_items = [];
 
-  if(ret.length > 0){
+  if (ret.length > 0) {
+    ret.forEach((item) => {
+      array_items.push(item);
+    });
+  }
+
+  if (array_items.length > 0) {
     select_sub_dog.style.display = "";
-    ret.forEach(item => {
+    ret.forEach((item) => {
       const option = document.createElement("option");
       option.textContent = item;
       select_sub_dog.append(option);
     });
-  }else{
+  } else {
     select_sub_dog.style.display = "none";
   }
 
-}
+  return array_items;
+};
 
-function reset(){
-  $("#reset").on("click", function () {
-    $('#select_sub_dog').prop('option',0);
-  });
-}
+
+
+  // if(lista_dogs.length > 0 && selectedOption.value != 0){
+  //   displayDiv.innerHTML = `<img class="display_img" src="${lista_dogs[p]}" alt="${p}">`;
+  // }else {
+  //     displayDiv.innerHTML = `Va rugam selectati o categorie de catei!`;
+
+  // }
+
+
+  // async function getPozeDogs(){
+  //   const response_image_dogs = await fetch(`https://dog.ceo/api/breed/${dog_value}/images`);
+  //   const poze_dogs = await response_image_dogs.json();
+  //   const lista_poze_dogs = poze_dogs.message;
+  // };
