@@ -36,13 +36,15 @@ async function imagePictureDog() {
   const lista_sub_dogs = list_sub_dogs.message;
 
 
+  if(selectedOption.value == 0){
+    displayDiv.innerHTML = `Va rugam selectati o categorie de catei!`;
+  }
+
   if(lista_poze_dogs.length > 0 && lista_sub_dogs.length == 0){
     for (p in lista_poze_dogs) {
       if (selectedOption.value != 0) {
         displayDiv.innerHTML = `<img class="display_img" src="${lista_poze_dogs[p]}" alt="${p}">`;
-      } else {
-        displayDiv.innerHTML = `Va rugam selectati o categorie de catei!`;
-      }
+      } 
     }
   };
   
@@ -50,13 +52,9 @@ async function imagePictureDog() {
     for (p in lista_sub_dogs) {
       if (selectedOption.value != 0) {
         displayDiv.innerHTML = `<img class="display_img" src="${lista_sub_dogs[p]}" alt="${p}">`;
-      } else {
-        displayDiv.innerHTML = `Va rugam selectati o categorie de catei!`;
-      }
+      } 
     }
   }
-
-
 };
 
 async function getSubListDogs(parent_dog) {
