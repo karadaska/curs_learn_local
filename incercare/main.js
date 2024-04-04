@@ -20,17 +20,43 @@ select_sub_dog.style.display = "none";
 //   return items;
 // }
 
-function createListaDogs (){
-  fetch ('https://dog.ceo/api/breeds/list/all')
-  .then(res =>{
-    console.log(res);
-    return res.json();
-  })
-  .then(data => {
-    console.log(data.message);
-  })
-  .catch(error => console.log(error));
+function getListaDogs() {
+  let ret = [];
+  fetch("https://dog.ceo/api/breeds/list/all")
+    .then((res) => {
+      console.log(res);
+      return res.json();
+    })
+    .then((data) => {
+      for (p in data.message) {
+        ret.push(p)
+      }
+    })
+    .catch((error) => console.log(error));
+    
+    return ret;
 }
+
+let txt = getListaDogs();
+
+const arr = Array.from(Object.keys(txt), k=>[`${k}`, txt[k]]);
+console.log(arr);
+
+
+
+
+
+// function createListaDogs(){
+//   const lista = getListaDogs();
+//     for (p in lista) {
+//       console.log(p);
+//     const option_dog = document.createElement("option");
+//     option_dog.textContent = p;
+//     select_dog.append(option_dog);
+//   }
+// };
+
+getListaDogs()
 
 
 
@@ -49,7 +75,7 @@ function createListaDogs (){
 
 // function getListaDogs() {
 //   fetch('https://dog.ceo/api/breeds/list/all')
-//   .then((response) => { 
+//   .then((response) => {
 //       response.json().then((item) => {
 //           console.log(item);
 //           return item.message;
@@ -59,19 +85,22 @@ function createListaDogs (){
 //   });
 // }
 
-
 async function imagePictureDog() {
   const selectedOption = select_dog.querySelector("option:checked");
   const dog_value = selectedOption.textContent;
   getSubListDogs(selectedOption.value);
 
   // lista de imagini caini
-  const response_image_dogs = await fetch(`https://dog.ceo/api/breed/${dog_value}/images`);
+  const response_image_dogs = await fetch(
+    `https://dog.ceo/api/breed/${dog_value}/images`
+  );
   const poze_dogs = await response_image_dogs.json();
   const lista_poze_dogs = poze_dogs.message;
 
   // lista de caini
-  const response_sub_dogs = await fetch(`https://dog.ceo/api/breed/${dog_value}/list`);
+  const response_sub_dogs = await fetch(
+    `https://dog.ceo/api/breed/${dog_value}/list`
+  );
   const list_sub_dogs = await response_sub_dogs.json();
   const lista_sub_dogs = list_sub_dogs.message;
 
@@ -103,9 +132,11 @@ async function imagePictureSubDog() {
 
   console.log(getSubListDogs);
 
-const response_image_subdogs = await fetch(`https://dog.ceo/api/breed/${a}/${b}/images`);
-const poze_sub_dogs = await response_image_subdogs.json();
-const lista_poze_sub_dogs = poze_sub_dogs.message;
+  const response_image_subdogs = await fetch(
+    `https://dog.ceo/api/breed/${a}/${b}/images`
+  );
+  const poze_sub_dogs = await response_image_subdogs.json();
+  const lista_poze_sub_dogs = poze_sub_dogs.message;
 
   if (lista_sub_dogs.length > 0) {
     for (p in lista_poze_sub_dogs) {
@@ -141,5 +172,3 @@ async function getSubListDogs(parent_dog) {
 
   return array_items;
 }
-
-
