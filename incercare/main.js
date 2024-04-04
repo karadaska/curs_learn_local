@@ -6,19 +6,33 @@ const displayDiv = document.querySelector(`.display`);
 // display none div-ul
 select_sub_dog.style.display = "none";
 
-async function createListaDogs() {
-  const response = await fetch("https://dog.ceo/api/breeds/list/all");
-  const lista = await response.json();
-  const items = lista.message;
+// async function createListaDogs() {
+//   const response = await fetch("https://dog.ceo/api/breeds/list/all");
+//   const lista = await response.json();
+//   const items = lista.message;
 
-  for (p in items) {
-    const option_dog = document.createElement("option");
-    option_dog.textContent = p;
-    select_dog.append(option_dog);
-  }
+//   for (p in items) {
+//     const option_dog = document.createElement("option");
+//     option_dog.textContent = p;
+//     select_dog.append(option_dog);
+//   }
 
-  return items;
+//   return items;
+// }
+
+function createListaDogs (){
+  fetch ('https://dog.ceo/api/breeds/list/all')
+  .then(res =>{
+    console.log(res);
+    return res.json();
+  })
+  .then(data => {
+    console.log(data.message);
+  })
+  .catch(error => console.log(error));
 }
+
+
 
 // function createListaDogs(){
 //   const lista = getListaDogs();
@@ -31,7 +45,7 @@ async function createListaDogs() {
 //   }
 // };
 
-createListaDogs();
+// createListaDogs();
 
 // function getListaDogs() {
 //   fetch('https://dog.ceo/api/breeds/list/all')
