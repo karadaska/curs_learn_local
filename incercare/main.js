@@ -24,23 +24,24 @@ function getListaDogs() {
   let ret = [];
   fetch("https://dog.ceo/api/breeds/list/all")
     .then((res) => {
-      console.log(res);
+      // console.log(res);
       return res.json();
     })
     .then((data) => {
-      for (p in data.message) {
-        ret.push(p)
+      for (const [key, value] of Object.entries(data.message)) {
+        console.log(`${key}: ${value}`);
+        // ret.push(key + value)
       }
+
+
+      // for (p in data.message) {
+      //   ret.push(p)
+      // }
     })
     .catch((error) => console.log(error));
     
     return ret;
 }
-
-let txt = getListaDogs();
-
-const arr = Array.from(Object.keys(txt), k=>[`${k}`, txt[k]]);
-console.log(arr);
 
 
 
