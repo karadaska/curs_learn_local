@@ -9,32 +9,45 @@ const displayDiv = document.querySelector(`.display_image_dog`);
 select_sub_dog.style.display = "none";
 
 async function getListaDogs() {
+  
+  console.log('test 1');
   let response = await fetch("https://dog.ceo/api/breeds/list/all");
   let lista = await response.json();
   let items_value = lista.message;
   let lista_dogs = Object.keys(items_value);
 
-  // lista_dogs.forEach(element => {
-  //   const option_dog = document.createElement("option");
-  //   option_dog.textContent = element;
-  //   select_dog.append(option_dog);
-  // });
+  console.log('test 2');
 
   return lista_dogs;
 
 }
-const getDogs = getListaDogs();
-getListaDogs();
 
+CreatetListaDogs();
 
-
+var txt = '';
 function CreatetListaDogs() {
+
+  
+txt = getListaDogs();
+console.log('test 3');
+
+console.log(txt);
+
+
+  txt.forEach(element => {
+    // const option_dog = document.createElement("option");
+    // option_dog.textContent = element;
+    // select_dog.append(option_dog);
+  console.log(element);
+
+  });
+
   // let lista_dogs = Object.keys(data_array);
-    for (p in txt) {
-    const option_dog = document.createElement("option");
-    option_dog.textContent = p;
-    select_dog.append(option_dog);
-  }
+  //   for (p in txt) {
+  //   const option_dog = document.createElement("option");
+  //   option_dog.textContent = p;
+  //   select_dog.append(option_dog);
+  // }
 }
 
 
