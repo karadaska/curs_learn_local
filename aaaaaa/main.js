@@ -1,5 +1,3 @@
-
-
 // json.parse (interpreteaza ca json)
 
 //Select date from html
@@ -10,28 +8,36 @@ const displayDiv = document.querySelector(`.display_image_dog`);
 // display none div-ul
 select_sub_dog.style.display = "none";
 
-
 async function getListaDogs() {
-  const response = await fetch("https://dog.ceo/api/breeds/list/all");
-  const lista = await response.json();
-  const items = lista.message;
-  const txt = Object.keys(items);
-  const item = [];
+  let response = await fetch("https://dog.ceo/api/breeds/list/all");
+  let lista = await response.json();
+  let items_value = lista.message;
+  let lista_dogs = Object.keys(items_value);
 
-  // for (p in items) {
+  // lista_dogs.forEach(element => {
   //   const option_dog = document.createElement("option");
-  //   option_dog.textContent = p;
+  //   option_dog.textContent = element;
   //   select_dog.append(option_dog);
-  // }
-  // txt.forEach(element => {
-  //   item.push(element);
   // });
 
-return item;
+  return lista_dogs;
 
 }
-
+const getDogs = getListaDogs();
 getListaDogs();
+
+
+
+function CreatetListaDogs() {
+  // let lista_dogs = Object.keys(data_array);
+    for (p in txt) {
+    const option_dog = document.createElement("option");
+    option_dog.textContent = p;
+    select_dog.append(option_dog);
+  }
+}
+
+
 
 
 
@@ -48,19 +54,14 @@ getListaDogs();
 //         ret.push(key + value)
 //       }
 
-
 //       // for (p in data.message) {
 //       //   ret.push(p)
 //       // }
 //     })
 //     .catch((error) => console.log(error));
-    
+
 //     return ret;
 // }
-
-
-
-
 
 // function createListaDogs(){
 //   const lista = getListaDogs();
@@ -71,10 +72,6 @@ getListaDogs();
 //     select_dog.append(option_dog);
 //   }
 // };
-
-getListaDogs()
-
-
 
 // function createListaDogs(){
 //   const lista = getListaDogs();
@@ -132,13 +129,13 @@ getListaDogs()
 //     }
 //   }
 
-  // if (lista_poze_sub_dogs.length > 0 && lista_sub_dogs.length > 0) {
-  //   for (p in lista_poze_sub_dogs) {
-  //     if (selectedOption.value != 0) {
-  //       displayDiv.innerHTML = `<img class="display_img" src="${lista_poze_sub_dogs[p]}" alt="${p}">`;
-  //     }
-  //   }
-  // }
+// if (lista_poze_sub_dogs.length > 0 && lista_sub_dogs.length > 0) {
+//   for (p in lista_poze_sub_dogs) {
+//     if (selectedOption.value != 0) {
+//       displayDiv.innerHTML = `<img class="display_img" src="${lista_poze_sub_dogs[p]}" alt="${p}">`;
+//     }
+//   }
+// }
 // }
 
 // async function imagePictureSubDog() {
