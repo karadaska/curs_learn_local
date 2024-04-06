@@ -25,29 +25,32 @@ async function imagePictureDog() {
   const dog_value = selectedOption.textContent;
   getSubListDogs(selectedOption.value);
 
-    // lista de imagini la caini
-  const response_image_dogs = await fetch(`https://dog.ceo/api/breed/${dog_value}/images`);
+  // lista de imagini la caini
+  const response_image_dogs = await fetch(
+    `https://dog.ceo/api/breed/${dog_value}/images`
+  );
   const poze_dogs = await response_image_dogs.json();
   const lista_poze_dogs = poze_dogs.message;
 
   // lista de caini
-  const response_sub_dogs = await fetch(`https://dog.ceo/api/breed/${dog_value}/list`);
+  const response_sub_dogs = await fetch(
+    `https://dog.ceo/api/breed/${dog_value}/list`
+  );
   const list_sub_dogs = await response_sub_dogs.json();
   const lista_sub_dogs = list_sub_dogs.message;
 
-  if(selectedOption.value == 0){
+  if (selectedOption.value == 0) {
     displayDiv.innerHTML = `Va rugam selectati o categorie de catei!`;
   }
 
-  if(lista_poze_dogs.length > 0 && lista_sub_dogs.length == 0){
+  if (lista_poze_dogs.length > 0 && lista_sub_dogs.length == 0) {
     for (p in lista_poze_dogs) {
       if (selectedOption.value != 0) {
         displayDiv.innerHTML = `<img class="display_img" src="${lista_poze_dogs[p]}" alt="${p}">`;
-      } 
+      }
     }
-  };
-
-};
+  }
+}
 
 async function getSubListDogs(parent_dog) {
   const response = await fetch(`https://dog.ceo/api/breed/${parent_dog}/list`);
@@ -74,9 +77,7 @@ async function getSubListDogs(parent_dog) {
   }
 
   return array_items;
-};
-
-
+}
 
 async function imagePictureSubDog() {
   const dog_select = select_dog.querySelector("option:checked");
@@ -85,23 +86,13 @@ async function imagePictureSubDog() {
   const sub_dog_select = select_sub_dog.querySelector("option:checked");
   const sub_dog = sub_dog_select.textContent;
 
-  const response_image_subdogs = await fetch(`https://dog.ceo/api/breed/${dog}/${sub_dog}/images`);
+  const response_image_subdogs = await fetch(
+    `https://dog.ceo/api/breed/${dog}/${sub_dog}/images`
+  );
   const poza = await response_image_subdogs.json();
   const img = poza.message;
 
-  
+  var getPicture = img[Math.floor(Math.random() * img.length)];
 
-  console.log('am selectat un catel '  + img);
-
-};
-
-
-  
-  // if (list_dogs.length > 0 && lista_sub_dogs.length > 0) {
-  //   for (p in lista_sub_dogs) {
-  //     if (selectedOption.value != 0) {
-  //       displayDiv.innerHTML = `<img class="display_img" src="${lista_sub_dogs[p]}" alt="${p}">`;
-  //     } 
-  //   }
-  // }
-
+  displayDiv.innerHTML = `<img class="display_img" src="${getPicture}" alt="${getPicture}">`;
+}
