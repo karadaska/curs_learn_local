@@ -25,18 +25,16 @@ async function getSubListDogs(parent_dog) {
   select_sub_dog.style.display = "";
 
   if (ret.length > 0) {
-
     ret.forEach((item) => {
       const option = document.createElement("option");
       option.textContent = item;
       select_sub_dog.append(option);
     });
-  } 
-  else {
+    console.log("nr inauntru 3 este: " + nr);
+  } else {
     select_sub_dog.style.display = "none";
-    console.log('aici trebuie sa sterg lista de option subdog');
+    console.log("aici trebuie sa sterg lista de option subdog " + ret.length);
   }
-
 }
 
 async function imagePictureDog() {
@@ -86,9 +84,4 @@ async function imagePictureSubDog() {
   let getPicture = img[Math.floor(Math.random() * img.length)];
 
   displayDiv.innerHTML = `<img class="display_img" src="${getPicture}" alt="${getPicture}">`;
-
-}
-
-function reset(nr){
-console.log(nr);
 }
