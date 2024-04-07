@@ -22,29 +22,22 @@ async function getSubListDogs(parent_dog) {
   const response = await fetch(`https://dog.ceo/api/breed/${parent_dog}/list`);
   const lista = await response.json();
   const ret = lista.message;
-  const array_items = [];
+  select_sub_dog.style.display = "";
 
   if (ret.length > 0) {
-    ret.forEach((item) => {
-      array_items.push(item);
-    });
-  }
-
-  if (array_items.length > 0) {
-    select_sub_dog.style.display = "";
 
     ret.forEach((item) => {
       const option = document.createElement("option");
       option.textContent = item;
       select_sub_dog.append(option);
     });
-  } else {
+  } 
+  else {
     select_sub_dog.style.display = "none";
+    console.log('aici trebuie sa sterg lista de option subdog');
   }
 
-  return array_items;
 }
-
 
 async function imagePictureDog() {
   const selectedOption = select_dog.querySelector("option:checked");
@@ -90,10 +83,12 @@ async function imagePictureSubDog() {
   const poza = await response_image_subdogs.json();
   const img = poza.message;
 
-  var getPicture = img[Math.floor(Math.random() * img.length)];
+  let getPicture = img[Math.floor(Math.random() * img.length)];
 
   displayDiv.innerHTML = `<img class="display_img" src="${getPicture}" alt="${getPicture}">`;
+
 }
 
-
-
+function reset(nr){
+console.log(nr);
+}
