@@ -30,10 +30,9 @@ async function getSubListDogs(parent_dog) {
       option.textContent = item;
       select_sub_dog.append(option);
     });
-    console.log("nr inauntru 3 este: " + nr);
   } else {
     select_sub_dog.style.display = "none";
-    console.log("aici trebuie sa sterg lista de option subdog " + ret.length);
+    // Aici nu stiu cum sa resetez selectul cu subdogs
   }
 }
 
