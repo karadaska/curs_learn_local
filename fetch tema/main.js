@@ -16,6 +16,8 @@ async function getListDogs() {
   }
 }
 
+getListDogs();
+
 async function getSubListDogs(parent_dog) {
   const response = await fetch(`https://dog.ceo/api/breed/${parent_dog}/list`);
   const lista = await response.json();
@@ -42,6 +44,7 @@ async function getSubListDogs(parent_dog) {
 
   return array_items;
 }
+
 
 async function imagePictureDog() {
   const selectedOption = select_dog.querySelector("option:checked");
@@ -92,4 +95,5 @@ async function imagePictureSubDog() {
   displayDiv.innerHTML = `<img class="display_img" src="${getPicture}" alt="${getPicture}">`;
 }
 
-getListDogs();
+
+
