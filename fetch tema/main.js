@@ -33,6 +33,7 @@ async function getSubListDogs(parent_dog) {
   } else {
     select_sub_dog.style.display = "none";
     // Aici nu stiu cum sa resetez selectul cu subdogs
+    resetOption();
   }
 }
 
@@ -83,4 +84,13 @@ async function imagePictureSubDog() {
   let getPicture = img[Math.floor(Math.random() * img.length)];
 
   displayDiv.innerHTML = `<img class="display_img" src="${getPicture}" alt="${getPicture}">`;
+}
+
+
+function resetOption() {
+  var x = document.getElementById("select_sub_dog");
+  var i;
+  for (i = 1; i < x.length; i++) {
+      x.remove(i);
+  }
 }
