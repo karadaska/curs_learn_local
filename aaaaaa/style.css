@@ -6,27 +6,14 @@ h1{
     text-align: center;
 }
 
-.display_dog{
+.display{
     border: 1px solid grey;
     margin: 1rem;
     padding: 2rem;
     text-align: center;
 }
 
-.display_dog img{
-    width: 500px;
-    height: 500px;
-}
-
-
-.display_subdog{
-    border: 1px solid grey;
-    margin: 1rem;
-    padding: 2rem;
-    text-align: center;
-}
-
-.display_subdog img{
+.display img{
     width: 500px;
     height: 500px;
 }

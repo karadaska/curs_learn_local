@@ -1,16 +1,8 @@
 const select_dog = document.querySelector(`#select_dog`);
-const selecteddog = select_dog.querySelector("option:checked");
-
 const select_sub_dog = document.querySelector(`#select_sub_dog`);
-const displayDivdog = document.querySelector(`.display_dog`);
-const displayDivsubdog = document.querySelector(`.display_subdog`);
+const displayDiv = document.querySelector(`.display`);
 
 select_sub_dog.style.display = "none";
-displayDivdog.style.display = "none";
-displayDivsubdog.style.display = "none";
-
-const aplica = document.querySelector(`#aplica`);
-aplica.addEventListener(`click`, imagePictureDog);
 
 async function getListDogs() {
   const response = await fetch("https://dog.ceo/api/breeds/list/all");
@@ -30,7 +22,6 @@ async function getSubListDogs(parent_dog) {
   const response = await fetch(`https://dog.ceo/api/breed/${parent_dog}/list`);
   const lista = await response.json();
   const ret = lista.message;
-
   select_sub_dog.style.display = "";
 
   if (ret.length > 0) {
@@ -42,13 +33,13 @@ async function getSubListDogs(parent_dog) {
   } else {
     select_sub_dog.style.display = "none";
     // Aici nu stiu cum sa resetez selectul cu subdogs
+    resetOption();
   }
 }
 
 async function imagePictureDog() {
   const selectedOption = select_dog.querySelector("option:checked");
   const dog_value = selectedOption.textContent;
-  getSubListDogs(selectedOption.value);
 
   const response_image_dogs = await fetch(
     `https://dog.ceo/api/breed/${dog_value}/images`
@@ -64,25 +55,24 @@ async function imagePictureDog() {
   const lista_sub_dogs = list_sub_dogs.message;
 
   if (selectedOption.value == 0) {
-    displayDivdog.innerHTML = `Va rugam selectati o categorie de catei!`;
+    displayDiv.innerHTML = `Va rugam selectati o categorie de catei!`;
   }
 
   if (lista_poze_dogs.length > 0 && lista_sub_dogs.length == 0) {
     for (p in lista_poze_dogs) {
       if (selectedOption.value != 0) {
-        displayDivdog.innerHTML = `<img class="display_img" src="${lista_poze_dogs[p]}" alt="${p}">`;
+        displayDiv.innerHTML = `<img class="display_img" src="${lista_poze_dogs[p]}" alt="${p}">`;
       }
     }
   }
-  displayDivdog.style.display = ''; 
-  aplica.addEventListener(`click`, imagePictureDog);
+  getSubListDogs(selectedOption.value);
+
 }
 
 async function imagePictureSubDog() {
-  aplica.addEventListener(`click`, imagePictureSubDog);
-
   const dog_select = select_dog.querySelector("option:checked");
   const dog = dog_select.textContent;
+
 
   const sub_dog_select = select_sub_dog.querySelector("option:checked");
   const sub_dog = sub_dog_select.textContent;
@@ -95,19 +85,15 @@ async function imagePictureSubDog() {
 
   let getPicture = img[Math.floor(Math.random() * img.length)];
 
-  if (sub_dog_select.value == 0) {
-    displayDivsubdog.innerHTML = `Va rugam selectati o categorie de catei!`;
-  }
-
-  displayDivdog.innerHTML = `<img class="display_img" src="${getPicture}" alt="${getPicture}">`;
-
+  displayDiv.innerHTML = `<img class="display_img" src="${getPicture}" alt="${getPicture}">`;
 }
+
 
 function resetOption() {
   var x = document.getElementById("select_sub_dog");
-  var txt = "";
   var i;
   for (i = 1; i < x.length; i++) {
       x.remove(i);
   }
 }
+

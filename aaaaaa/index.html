@@ -10,19 +10,16 @@
       <h1>Tema fetch</h1>
       <div id="row">
         Select a dog:
-        <select id="select_dog">
+        <select id="select_dog" onchange="imagePictureDog()">
           <option value="0">Select a value</option>
         </select>
-        <select id="select_sub_dog">
+        <input type="hidden" id="select_dog_hidden">
+        <select id="select_sub_dog" onchange="imagePictureSubDog()">
           <option value="0">Select a subdog</option>
         </select>
-        <button id="aplica">Aplica</button>
       </div>
-      <div class="display_dog">
+      <div class="display">
         <strong>Display image dog</strong>
-      </div>
-      <div class="display_subdog">
-        <strong>Display image sub dog</strong>
       </div>
     </div>
   </body>
