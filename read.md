@@ -1,5 +1,5 @@
 
-// json.parse(variabile) => interpreateaza variabila ca fiind json
+// json.parse(variabile) => interpreteaza variabila ca fiind json
 
 // // Putem scoate elementele dintr-un array cu functia shift si pop
 // console.log('Scoatem primul element din array cu shift: ' +numar2.shift());
@@ -15,9 +15,15 @@
 // console.log('Adaugam elemente la inceputul unui array cu functia unshift : ' + numere);
 
 
-// Number.parseFloat() 	Convertește un șir într-un număr 
-// Number.parseInt() 	Convertește un șir într-un număr întreg 
+let a = "dasdas"
+console.log(parseInt(a) == NaN) => tot timpul da false
+Verificare daca nu este un numar se face cu IsNan(a) si aici o sa zica ca DA..nu este un numar
+IsNan daca nu este numar o sa zica DA...daca e numar o sa zica NU 
+
+// Number.parseFloat() 	Convertește un șir într-un număr ("1.3") => 1.3  sau parseFloat(number)
+// Number.parseInt() 	Convertește un șir într-un număr întreg ("1.3") => 1 sau ("1") => 1 sau parseInt(number)
 // Number.isInteger() 	Returnează adevărat dacă argumentul este un număr întreg 
+//Cand vrem sa convertim un numar catre string se face cu functia number.toString();
 // * Math.random afiseaza valori intre 0 si 1
 // * Valoare absoluta math.abs returneaza valoare pozitiva (-7) returneaza 7
 // * Daca vrem sa inlocuim un element dintr-o lista se face cu replaceWith
@@ -59,14 +65,3 @@ document.getElementById("demo").style.display = "block";
 Click to Remove Me!
 </button> 
 
-
-
-
-http://developer.mozilla.org/en-US/docs/web/HTTP/Method/GET?sourse=sidebar#Syntax
-
-
-http: scheme
-developer.org: domeniu
-en-/GET este path
-?sourse = query
-Syntax  = fragment
