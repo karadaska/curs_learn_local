@@ -1,3 +1,17 @@
+const numarul1 = document.querySelector(`#numarul1`);
+const numarul2 = document.querySelector(`#numarul2`);
+const btn4 = document.querySelector(`#btn4`);
+const display_prob4 = document.querySelector(`.display_prob4`);
+
+function changeTheNumbers() {
+  nr1 = numarul1.value;
+  nr2 = numarul2.value;
+
+  display_prob4.textContent = nr2 + ' ' + nr1;
+}
+
+btn4.addEventListener("click", changeTheNumbers);
+
 const problema3 = document.querySelector(`#problema3`);
 const btn3 = document.querySelector(`#btn3`);
 const display_prob3 = document.querySelector(`.display_prob3`);
