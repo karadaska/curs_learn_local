@@ -83,11 +83,13 @@ document.getElementById("demo").style.fontSize = "35px";
 document.getElementById("demo").style.display = "block"; 
 
 
-
-
-
 //this se refera la elementul html care a primit evenimentul
 <button onclick="this.style.display='none'">
 Click to Remove Me!
 </button> 
 
+Bucla for intr-un obiect se face cu:
+
+for (const variabila of obiect) {
+  // code block to be executed
+}

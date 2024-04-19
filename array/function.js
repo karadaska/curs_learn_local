@@ -37,7 +37,6 @@ function myFunction(value) {
 
 demo2.innerHTML = text2;
 
-
 const numbers = [45, 4, 9, 16, 25];
 let txt3 = "";
 numbers.forEach(myNumere);
