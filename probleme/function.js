@@ -15,3 +15,22 @@ function nextUpNumber(){
 btn1.addEventListener('click', nextUpNumber);
 
 
+const problema2 = document.querySelector(`#problema2`);
+const btn2 = document.querySelector(`#btn2`);
+const display_prob2 = document.querySelector(`.display_prob2`);
+
+function opusNumber(){
+  nr = problema2.value;
+  if(nr !='' && nr !=-0){
+    display_prob2.textContent = nr;
+    if(nr > 0){
+      nr == -nr
+    }
+  }else {
+    display_prob2.textContent = 'Te rog introdu un numar valid';
+  }
+}
+
+btn2.addEventListener('click', opusNumber);
+
+
