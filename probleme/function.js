@@ -1,3 +1,60 @@
+// NIVEL AVANSAT--------------------------------------------------------------------------------------------------------------
+
+
+// Se citeste un numar intreg pozitiv. Sa se afiseze toate numerele pozitive(inclusiv 0),
+// strict mai mici valoarea citita, in ordine descrescatoare
+
+function numereDescrescatoare(a){
+let arr = []
+
+
+  for (let i = 0; i <= a; i++) {
+      arr.push(i);
+  }
+}
+
+
+// Se citeste un numar intreg pozitiv. Sa se afiseze toate numerele pozitive nenule mai mici
+// sau egale decat valoarea citita, in ordine crescatoare
+
+
+function numarIntreg(a){
+
+  for (let i = 0; i <= a; i++) {
+    if(i > 0) {
+      console.log(i);    
+    }
+  }
+
+}
+
+
+// NIVEL INCEPATOR--------------------------------------------------------------------------------------------------------------
+// Impartire a 2 numere()
+
+function impartire(a, b){
+  if(b != 0){
+    return a/b;
+  }else {
+    console.log('Operate imposibila; impartitorul este nul');
+  }
+
+}
+
+
+// Suma a 2 numere()
+
+function sumaAndProdus(a, b){
+  let suma = a + b;
+  let produsul = a * b;
+  console.log('Suma numerelor a si b este: ' + suma);
+  console.log('Produsul numerelor a si b este: ' + produsul);
+
+}
+
+
+
+
 const numarul1 = document.querySelector(`#numarul1`);
 const numarul2 = document.querySelector(`#numarul2`);
 const btn4 = document.querySelector(`#btn4`);
