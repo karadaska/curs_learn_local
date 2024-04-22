@@ -7,10 +7,14 @@
 function numereDescrescatoare(a){
 let arr = []
 
+for(var i=(aux2.length - 1); i>=0; i--){
 
-  for (let i = 0; i <= a; i++) {
-      arr.push(i);
-  }
+}
+
+  // for (let i = 0; i <= a; i++) {
+  //     arr.push(i);
+  // }
+  // console.log(arr)
 }
 
 
